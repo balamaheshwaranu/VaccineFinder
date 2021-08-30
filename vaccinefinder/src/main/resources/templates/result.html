@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<title>Vaccination Centres</title>
+</head>
+<body>
+<table>
+<tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Vaccine Type</th>
+    <th>Min Age </th>
+    <th>Available Slots</th>
+  </tr>
+<tr th:each="place: ${centers}">
+    <td th:text="${place.name}" />
+    <td th:text="${place.address}" />
+    <td th:text="${place.vaccine}" />
+    <td th:text="${place.min_age_limit}" />
+    <td th:text="${place.available_capacity}" />
+</tr>
+</table>
